@@ -1,0 +1,107 @@
+<div class="grid-container dashboard-calendar">
+    <div class="grid-item c-left-item">
+        <section class="calendar-container">
+            <div  id="calendar-4" data-mdb-default-view="month"  data-mdb-twelve-hour="true" >
+            </div>
+        </section>
+    </div>
+</div>
+<link rel="stylesheet" href="https://rosnyc.com/dev_admin/assets/mdb/css/mdb.min.css"/>
+<link rel="stylesheet" href="https://rosnyc.com/admin/assets/select2.min.css"/>
+<link rel="stylesheet" href="https://rosnyc.com/admin/assets/wysiwyg.min.css"/>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.min.css'>
+<link rel="stylesheet" href="https://rosnyc.com/admin/assets/calendar.min.css">
+<link rel="stylesheet" href="https://rosnyc.com/admin/appointments/assets/appointments-style.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://rosnyc.com/admin/bootstrap/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="https://rosnyc.com/admin/bootstrap/plugins/jQueryUI/jquery-ui.min.js"></script>
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<script src="https://rosnyc.com/admin/bootstrap/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://rosnyc.com/admin/bootstrap/dist/js/app.min.js"></script>
+<script src="https://rosnyc.com/admin/bootstrap/plugins/iCheck/icheck.min.js"></script>
+<script src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/dist/mdb5/plugins/countdown.min.js"></script>
+<script src="https://rosnyc.com/admin/assets/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<style>
+    .sidebar-mini.sidebar-collapse .content-wrapper {
+        min-height: 100vh;
+    }
+    .grid-container {
+        min-height: 100vh;
+    }
+    body .calendar {
+        height: 100%;
+    }
+    body .calendar table {
+        height: calc(100% - 88px);
+    }
+    body .dashboard-calendar .calendar-container .list {
+        height: auto;
+    }
+    .grid-item.c-left-item {
+        overflow: hidden;
+    }
+    .activeControle{
+        background-color: #fff !important;
+        border-color: #fff !important;
+        color: #593eff !important;
+    }
+    .popover-header{
+        font-style: normal;
+        max-height: 450px !important;
+        overflow: auto;
+    }
+    .pop-up-header, .close-popup-model{
+        color: black !important
+    }
+    .pop-up-header .close span {
+        color: black;
+    }
+    .popupModel-dialog{
+        max-width: 65rem !important;
+        padding-right: 0px !important;
+    }
+    .popup-date-vale{
+        font-style: normal;
+        font-size: small;
+        font-family: system-ui;
+    }
+    .body-data{
+        overflow: auto;
+        display: inline-block;
+        height: 350px;
+    }
+    #appointmentSummeryModal{   
+        z-index: 9999;  
+    }
+    .agent-name-ui{
+        width: 20%;
+    }
+    .agent-email-ui{
+        width: 20%;
+    }
+</style>
+<script src="https://rosnyc.com/dev_admin/assets/mdb/js/mdb.min.js"></script>
+<script src="cal.js"></script>
+<script src="appointments-main.js"></script>
+<script src="https://rosnyc.com/admin/assets/select2.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function() {
+    $(".calendar-tools").on("click", function () {  
+        $(".btn-group").find(".activeControle").removeClass("activeControle");
+    });
+});
+$("#newAppointmentModal").on('hide.mdb.modal', function () {
+    $(".modal-backdrop").remove();
+})
+$("#editAppointmentModal").on('hide.mdb.modal', function () {
+    $(".modal-backdrop").remove();
+}) 
+$(document).on('click', '.close-popup-model', function(){
+    $('.popupModel').modal('hide')
+})
+</script>
